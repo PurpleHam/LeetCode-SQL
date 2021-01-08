@@ -1,22 +1,22 @@
-Write a SQL query to get the second highest salary from the Employee table.
+-- Write a SQL query to get the second highest salary from the Employee table.
 
-+----+--------+
-| Id | Salary |
-+----+--------+
-| 1  | 100    |
-| 2  | 200    |
-| 3  | 300    |
-+----+--------+
-For example, given the above Employee table, the query should return 200 as the second highest salary. If there is no second highest salary, then the query should return null.
+-- +----+--------+
+-- | Id | Salary |
+-- +----+--------+
+-- | 1  | 100    |
+-- | 2  | 200    |
+-- | 3  | 300    |
+-- +----+--------+
+-- For example, given the above Employee table, the query should return 200 as the second highest salary. If there is no second highest salary, then the query should return null.
 
-+---------------------+
-| SecondHighestSalary |
-+---------------------+
-| 200                 |
-+---------------------+
+-- +---------------------+
+-- | SecondHighestSalary |
+-- +---------------------+
+-- | 200                 |
+-- +---------------------+
 
 
-Solution 1:
+-- Solution 1:
 
 SELECT 
     IFNULL((SELECT
@@ -30,7 +30,7 @@ SELECT
             WHERE 
                 ranking = 2), NULL) AS SecondHighestSalary
 
-Solution 2:
+-- Solution 2:
 
 SELECT
   MAX(Salary) AS SecondHighestSalary
