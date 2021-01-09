@@ -30,7 +30,7 @@
 -- Note:
 -- The students should not be counted duplicate in each course.
 
-
+-- Solution 1:
 
 WITH A AS
 (SELECT
@@ -56,4 +56,14 @@ FROM
     B
 WHERE
     num >= 5
+    
+-- Solution 2: 
+
+SELECT
+    class
+FROM
+    courses
+GROUP BY class
+HAVING COUNT(DISTINCT student) >= 5
+;
 
